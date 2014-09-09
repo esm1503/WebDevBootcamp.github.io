@@ -1,10 +1,20 @@
 ---
-layout: full
+layout: resources
 title: Resources
 ---
 
 {% for type in site.data.resources %}
   <div class="list-group col-lg-4">
+
+      <ul class="nav nav-tabs">
+
+          <li class="active">
+              <a href="#type.type" role="tab" data-toggle="tab"> Summer 2014 <i class="fa fa-cogs"></i></a>
+          </li>
+          <li>
+              <a href="#spring2014" role="tab" data-toggle="tab"> Spring 2014 <i class="fa fa-graduation-cap"></i></a>
+          </li>
+
     <a href="#" class="list-group-item active">
      {{ type.type }}
     </a>
