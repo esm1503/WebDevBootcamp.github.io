@@ -16,13 +16,46 @@ title: Resources
     </li>
 </ul>
 
-{% for type in site.data.resources %}
-  <div class="list-group col-lg-4">
-    <a href="#" class="list-group-item active">
-     {{ type.type }}
-    </a>
-    {% for resource in type.links %}
-      <a href="{{ resource.url }}" class="list-group-item">{{ resource.name }}</a>
-    {% endfor %}
-  </div>
-{% endfor %}
+
+<div class="tab-content">
+
+    <div class="tab-pane active" id="resources">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for type in site.data.resources %}
+            <tr>
+                <td>
+                    <a href="#" class="list-group-item active">
+                    {{ type.type }}
+                    </a>
+                </td>
+
+                <td>{% for resource in type.links %}
+                    <a href="{{ resource.url }}" class="list-group-item">{{ resource.name }}</a>
+                    {% endfor %}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--{% for type in site.data.resources %}
+      <div class="list-group col-lg-12">
+        <a href="#" class="list-group-item active">
+         {{ type.type }}
+        </a>
+        {% for resource in type.links %}
+          <a href="{{ resource.url }}" class="list-group-item">{{ resource.name }}</a>
+        {% endfor %}
+      </div>
+    {% endfor %} -->
